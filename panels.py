@@ -2,7 +2,7 @@ import bpy
 from .functions import readWidgets
 from bpy.types import Menu
 
-class bw_posemode_panel(bpy.types.Panel):
+class BW_PT_POSEMODE(bpy.types.Panel):
     bl_label = "Bone Widget"
     bl_category = "RIG Tools"
     bl_space_type = 'VIEW_3D'
@@ -37,7 +37,7 @@ class bw_posemode_panel(bpy.types.Panel):
         else :
             row.operator("bonewidget.return_to_armature",icon ="LOOP_BACK",text='To bone')
 
-class bw_specials(Menu):
+class BW_MT_SPECIALS(Menu):
     bl_label = "Bone widget Specials"
 
     def draw(self, context):
@@ -49,8 +49,8 @@ class bw_specials(Menu):
 
 
 def register():
-    bpy.utils.register_class(bw_specials)
-    bpy.utils.register_class(bw_posemode_panel)
+    bpy.utils.register_class(BW_MT_SPECIALS)
+    bpy.utils.register_class(BW_PT_POSEMODE)
 
 
 def unregister():
